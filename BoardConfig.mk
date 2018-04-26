@@ -44,7 +44,7 @@ TARGET_KERNEL_CONFIG := lineageos_land_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 
 # Audio
--include $(TOPDIR)hardware/qcom/audio/configs/msm8996/msm8937.mk
+-include $(TOPDIR)hardware/qcom/audio/configs/msm8937/msm8937.mk
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
