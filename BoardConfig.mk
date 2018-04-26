@@ -98,6 +98,7 @@ USE_OPENGL_RENDERER := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 
 # Malloc
 MALLOC_SVELTE := true
