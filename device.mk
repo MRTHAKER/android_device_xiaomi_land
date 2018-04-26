@@ -236,7 +236,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Power IMPL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service-qti
+    android.hardware.power@1.1-impl \
+    android.hardware.power@1.1-service \
+    power.msm8937
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
 
