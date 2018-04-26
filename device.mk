@@ -23,6 +23,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
 
+# HWUI overrides
+$(call inherit-product, vendor/omni/config/phone-xxxhdpi-3072-hwui-memory.mk)
+
+# Dalvik overrides
+$(call inherit-product, vendor/omni/config/phone-xxxhdpi-3072-dalvik-heap.mk)
+
 # ANT
 PRODUCT_PACKAGES += \
     AntHalService \
@@ -87,10 +93,6 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -464,12 +466,9 @@ PRODUCT_PACKAGES += \
     rcs_service_api \
     rcs_service_api.xml
 
-# Telephony
+#IMS
 PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    ims-ext-common
 
 # Whitelisted app
 PRODUCT_COPY_FILES += \

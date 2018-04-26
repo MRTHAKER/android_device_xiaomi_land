@@ -40,8 +40,10 @@
 #include <android-base/strings.h>
 
 #include "property_service.h"
-#include "vendor_init.h"
+#include <android-base/logging.h>
 
+namespace android {
+namespace init {
 using android::base::GetProperty;
 using android::init::property_set;
 using android::base::ReadFileToString;
@@ -118,6 +120,8 @@ void vendor_load_properties()
     std::ifstream fin;
     std::string buf;
 
+    LOG(INFO) << __func__ << "\n";
+
     std::string product = GetProperty("ro.product.name", "");
     if (product.find("land") == std::string::npos)
         return;
@@ -170,3 +174,6 @@ void vendor_load_properties()
         property_set("ro.product.model", "Redmi 3S");
     }
 }
+}  // namespace init
+}  // namespace android
+
